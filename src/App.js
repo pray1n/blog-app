@@ -2,6 +2,8 @@ import './App.css';
 import GetPost from './components/GetPost'
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Sidepane from './components/Sidepane'
+
 
 function App() {
   
@@ -21,7 +23,12 @@ function App() {
   return (
     <div>
     <Header />
+    <hr/>
+    <div className="logo"> <p> Logo is going to be here</p> </div>
+    <hr/>
     <GetPost />
+    <hr/>
+    <Sidepane />
     <Footer />
     </div>
   );
