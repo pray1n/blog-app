@@ -1,22 +1,42 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, useCallback} from 'react'
 import { client } from '../client'
 
 const GetPost = () => {
-    const [isGetPostLoading, setIsGetPostLoading] = useState(false)
     const [PostContent, setPostContent] = useState([])
+    const [IsPostContentLoading, setIsPostContentLoading] = useState([])
 
-const getPostContent = async () => {
+const CleanUpPostContent = useCallback((rawData) => {
+    const CleanPostContent = rawData.map((post) => {
+        const {sys, fields} = post
+        const {id} = sys
+        const postTitle = fields.postTitle
+        const postDescription = fields.description
+        const postBackground = fields.image.fields.file.url
+        const updatedPost = {id }
+        return updatedPost
+    })
+    setPostContent(CleanPostContent)
+})
+
+const GetPostContent = useCallback(async () => {
+    setIsPostContentLoading(true)
     try {
         const response = await client.getEntries({ content_type: 'blogPost'})
         const responseData = response.items
-        console.log(response)
-    } catch(error) {
+        if (responseData) {
+            CleanUpPostContent(responseData)
+        } else {
+                setPostContent([])
+        }
+        setIsPostContentLoading(false)       
+        } catch (error) {
         console.log(error)
-    }
-}
+        setIsPostContentLoading(false)
+        }
+}, [CleanUpPostContent] )
 useEffect(() => {
-    getPostContent()
-}, [getPostContent])
+    GetPostContent()
+}, [GetPostContent])
 
   return (
     <div>getPost</div>
