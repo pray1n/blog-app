@@ -12,7 +12,7 @@ const CleanUpPostContent = useCallback((rawData) => {
         const postTitle = fields.postTitle
         const postDescription = fields.description
         const postBackground = fields.image.fields.file.url
-        const updatedPost = {id }
+        const updatedPost = {id, postTitle, postDescription, postBackground }
         return updatedPost
     })
     setPostContent(CleanPostContent)
