@@ -1,5 +1,7 @@
 import './App.css';
 import GetPost from './components/GetPost'
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   
@@ -17,7 +19,11 @@ function App() {
   // });
   // const response = await client.getEntries({ content_type: 'blogPost'})
   return (
+    <div>
+    <Header />
     <GetPost />
+    <Footer />
+    </div>
   );
 }
 

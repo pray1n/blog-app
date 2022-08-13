@@ -6,12 +6,14 @@ const GetPost = () => {
     const [IsPostContentLoading, setIsPostContentLoading] = useState([])
 
 const CleanUpPostContent = useCallback((rawData) => {
+    
     const CleanPostContent = rawData.map((post) => {
+        console.log(post.fields.picture.fields.file.url)
         const {sys, fields} = post
         const {id} = sys
-        const postTitle = fields.postTitle
+        const postTitle = fields.title
         const postDescription = fields.description
-        const postBackground = fields.image.fields.file.url
+        const postBackground = fields.picture.fields.file.url
         const updatedPost = {id, postTitle, postDescription, postBackground }
         return updatedPost
     })
@@ -23,6 +25,7 @@ const GetPostContent = useCallback(async () => {
     try {
         const response = await client.getEntries({ content_type: 'blogPost'})
         const responseData = response.items
+        console.log(response.items)
         if (responseData) {
             CleanUpPostContent(responseData)
         } else {
@@ -36,10 +39,18 @@ const GetPostContent = useCallback(async () => {
 }, [CleanUpPostContent] )
 useEffect(() => {
     GetPostContent()
-}, [GetPostContent])
+}, [])
 
   return (
-    <div>getPost</div>
+    <div>{PostContent.map((post , index) => {
+        console.log(post)
+    return(
+        <div key={index}>
+       <p> {post.postTitle}  </p>  
+       
+        </div>
+    )
+    })}</div>
   )
 }
 
