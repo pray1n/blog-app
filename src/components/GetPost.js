@@ -52,11 +52,11 @@ useEffect(() => {
     <div>{PostContent.map((post , index) => {
         console.log(post)
     return(
-        <div key={index}>
+        <div className="postcontent" key={index}>
         
-       <p> {post.postTitle[1]}  </p>
+       <h1> {post.postTitle}  </h1>
         <p> {documentToReactComponents(post.postDescription)} </p>
-       <img src={post.postBackground} alt="travel picture" height= "350px" width="500px" />
+       <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
 
        </div>
        

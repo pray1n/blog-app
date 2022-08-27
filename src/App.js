@@ -23,8 +23,7 @@ function App() {
   return (
     <div>
     <Header />
-    <hr/>
-    <div className="logo"> <p> Logo is going to be here</p> </div>
+    
     <hr/>
     <div className="main">
     <GetPost />

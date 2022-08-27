@@ -1,12 +1,22 @@
 /* Header */
+.headercontainer{
+  display: flex;
+  gap: 2rem;
+  flex-direction: row-reverse;
+}
+  
+
 .headerflex{
   display: flex;
   justify-content: center;
   gap: 2rem;
+  width: 80%;
+  height: 20%;
+  margin-top: 2rem
 
 }
-.logo{
-  margin-left: 20rem;
+.newLogo > img{
+  height: 8rem;
 }
 /* Footer */
 .footerflex{
@@ -16,8 +26,12 @@
   
 }
 /* App */
-
-
+.main{
+  margin-left: 25rem;
+}
+.postcontent > h1{
+  font-size: 1.25rem;
+}
 
 
 .App {
@@ -57,7 +71,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.main{
-  margin-left: 37rem;
 }
