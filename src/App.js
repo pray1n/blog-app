@@ -26,7 +26,9 @@ function App() {
     <hr/>
     <div className="logo"> <p> Logo is going to be here</p> </div>
     <hr/>
+    <div className="main">
     <GetPost />
+    </div>
     <hr/>
     <Sidepanel />
     <Footer />

@@ -44,10 +44,22 @@ const GetPost = () => {
             console.log(error)
             setIsPostContentLoading(false)
         }
-    }, [CleanUpPostContent])
-    useEffect(() => {
-        GetPostContent()
-    }, [GetPostContent])
+
+}, [CleanUpPostContent] )
+useEffect(() => {
+    GetPostContent()
+}, [])
+
+  return (
+    <div>{PostContent.map((post , index) => {
+        console.log(post)
+    return(
+        <div key={index}>
+        
+       <p> {post.postTitle[1]}  </p>
+        <p> {documentToReactComponents(post.postDescription)} </p>
+       <img src={post.postBackground} alt="travel picture" height= "350px" width="500px" />
+
 
     return (
         <div>
