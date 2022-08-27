@@ -12,7 +12,7 @@ const CleanUpPostContent = useCallback((rawData) => {
         const {sys, fields} = post
         const {id} = sys
         const postTitle = fields.title
-        const postDescription = fields.description.data
+        const postDescription = fields.description
         const postBackground = 'https:' + fields.picture.fields.file.url
         const updatedPost = {id, postTitle, postDescription, postBackground }
         return updatedPost
@@ -50,6 +50,7 @@ useEffect(() => {
     return(
         <div key={index}>
        <p> {post.postTitle}  </p>
+       <img src="{post.postBackground}">Picture</img>  
        
        
        

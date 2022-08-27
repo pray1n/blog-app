@@ -2,7 +2,7 @@ import './App.css';
 import GetPost from './components/GetPost'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Sidepane from './components/Sidepane'
+import Sidepanel from './components/Sidepanel'
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
     <hr/>
     <GetPost />
     <hr/>
-    <Sidepane />
+    <Sidepanel />
     <Footer />
     </div>
   );
