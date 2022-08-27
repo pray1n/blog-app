@@ -56,7 +56,7 @@ useEffect(() => {
         
        <p> {post.postTitle[1]}  </p>
         <p> {documentToReactComponents(post.postDescription)} </p>
-       <img src={post.postBackground} alt="travel picture"/>
+       <img src={post.postBackground} alt="travel picture" height= "350px" width="500px" />
 
        </div>
        
