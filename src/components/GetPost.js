@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback} from 'react'
+import React, { useState, useEffect, } from 'react'
 import { client } from '../client'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -6,7 +6,7 @@ const GetPost = () => {
     const [PostContent, setPostContent] = useState([])
     
 
-const CleanUpPostContent = useCallback((rawData) => {
+const CleanUpPostContent = (rawData) => {
     
     const CleanPostContent = rawData.map((post) => {
         
@@ -24,25 +24,26 @@ const CleanUpPostContent = useCallback((rawData) => {
     })
     setPostContent(CleanPostContent)
     
-})
+}
 
 
-const GetPostContent = useCallback(async () => {
-    try {
-        const response = await client.getEntries({ content_type: 'blogPost'})
-        const responseData = response.items
-        console.log(response.items)
-        if (responseData) {
-            CleanUpPostContent(responseData)
-        } else {
-                setPostContent([])
-        }     
-        } catch (error) {
-        console.log(error)
-        
-        }
-}, [CleanUpPostContent] )
+
 useEffect(() => {
+    const GetPostContent = async () => {
+        try {
+            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'continent'})
+            const responseData = response.items
+            console.log(response.items)
+            if (responseData) {
+                CleanUpPostContent(responseData)
+            } else {
+                    setPostContent([])
+            }     
+            } catch (error) {
+            console.log(error)
+            
+            }
+        }
     GetPostContent()
 }, [])
 
