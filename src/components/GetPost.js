@@ -8,16 +8,19 @@ const GetPost = () => {
 const CleanUpPostContent = useCallback((rawData) => {
     
     const CleanPostContent = rawData.map((post) => {
-        console.log(post.fields.picture.fields.file.url)
+        console.log('https:' + post.fields.picture.fields.file.url)
         const {sys, fields} = post
         const {id} = sys
         const postTitle = fields.title
-        const postDescription = fields.description
-        const postBackground = fields.picture.fields.file.url
+        const postDescription = fields.description.data
+        const postBackground = 'https:' + fields.picture.fields.file.url
         const updatedPost = {id, postTitle, postDescription, postBackground }
         return updatedPost
+        
+        
     })
     setPostContent(CleanPostContent)
+    
 })
 
 const GetPostContent = useCallback(async () => {
@@ -46,7 +49,9 @@ useEffect(() => {
         console.log(post)
     return(
         <div key={index}>
-       <p> {post.postTitle}  </p>  
+       <p> {post.postTitle}  </p>
+       
+       
        
         </div>
     )
