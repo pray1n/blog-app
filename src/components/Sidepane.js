@@ -5,3 +5,4 @@ function Sidepane(){
         <p> here is also text</p>
         </div>)
 }
+export default Sidepane;
