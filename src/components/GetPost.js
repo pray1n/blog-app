@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const GetPost = () => {
     const [PostContent, setPostContent] = useState([])
-    const [IsPostContentLoading, setIsPostContentLoading] = useState([])
+    
 
 const CleanUpPostContent = useCallback((rawData) => {
     
@@ -28,7 +28,6 @@ const CleanUpPostContent = useCallback((rawData) => {
 
 
 const GetPostContent = useCallback(async () => {
-    setIsPostContentLoading(true)
     try {
         const response = await client.getEntries({ content_type: 'blogPost'})
         const responseData = response.items
@@ -37,11 +36,10 @@ const GetPostContent = useCallback(async () => {
             CleanUpPostContent(responseData)
         } else {
                 setPostContent([])
-        }
-        setIsPostContentLoading(false)       
+        }     
         } catch (error) {
         console.log(error)
-        setIsPostContentLoading(false)
+        
         }
 }, [CleanUpPostContent] )
 useEffect(() => {
@@ -62,7 +60,7 @@ useEffect(() => {
        
        
        
-        
+       
     )
     })}</div>
   )
