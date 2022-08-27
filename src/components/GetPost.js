@@ -31,7 +31,7 @@ const CleanUpPostContent = (rawData) => {
 useEffect(() => {
     const GetPostContent = async () => {
         try {
-            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'continent'})
+            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'continent,city'})
             const responseData = response.items
             console.log(response.items)
             if (responseData) {
