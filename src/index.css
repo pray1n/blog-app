@@ -13,26 +13,9 @@ code {
 }
 
 .postDescription {
-    width: 40%;
+    width: 80%;
 }
 
-navLinks {
-    margin-left: theme spacing(10);
-    display: flex;
-}
-
-logo {
-    flex-grow: 1;
-    cursor: pointer;
-}
-link {
-    text-decoration: 'none';
-    color: 'white';
-    font-size: '20px';
-    margin-left: theme spacing(20);
-}
-
-:hover {
-    color: 'yellow';
-    border-bottom: '1px solid white';
+.logo {
+    width: 6rem;
 }
