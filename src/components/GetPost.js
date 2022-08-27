@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback} from 'react'
 import { client } from '../client'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const GetPost = () => {
     const [PostContent, setPostContent] = useState([])
@@ -8,20 +9,23 @@ const GetPost = () => {
 const CleanUpPostContent = useCallback((rawData) => {
     
     const CleanPostContent = rawData.map((post) => {
-        console.log('https:' + post.fields.picture.fields.file.url)
+        
         const {sys, fields} = post
         const {id} = sys
         const postTitle = fields.title
         const postDescription = fields.description
         const postBackground = 'https:' + fields.picture.fields.file.url
         const updatedPost = {id, postTitle, postDescription, postBackground }
+        
         return updatedPost
+        
         
         
     })
     setPostContent(CleanPostContent)
     
 })
+
 
 const GetPostContent = useCallback(async () => {
     setIsPostContentLoading(true)
@@ -49,12 +53,16 @@ useEffect(() => {
         console.log(post)
     return(
         <div key={index}>
-       <p> {post.postTitle}  </p>
-       <img src="{post.postBackground}">Picture</img>  
+        
+       <p> {post.postTitle[1]}  </p>
+        <p> {documentToReactComponents(post.postDescription)} </p>
+       <img src={post.postBackground} alt="travel picture"/>
+
+       </div>
        
        
        
-        </div>
+        
     )
     })}</div>
   )
