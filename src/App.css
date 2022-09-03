@@ -34,16 +34,21 @@ main {
   display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start; gap: 1.5rem;
 }
 
-main div {
-  border: 1px solid #aaa;
-}
-
 .main {
-  flex: 1 1 90%;
+  flex: 9 1 90%;
 }
 
-.sidepanel {
+#sidepanel {
   flex: 1 1 10%;
+  padding: 1rem;
+}
+
+#sidepanel h2 {
+  border-bottom: 2px solid #61dafb;
+}
+
+#sidepanel button, #sidepanel div {
+  width: 100%; margin-bottom: 0.5rem;
 }
 
 .postcontent > h1{
