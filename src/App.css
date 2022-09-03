@@ -21,6 +21,10 @@
   height: 8rem;
 }
 
+.logo {
+  width: 6rem;
+}
+
 /* Footer */
 .footerflex{
   display: flex;
