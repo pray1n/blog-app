@@ -10,18 +10,19 @@ const CleanUpPostContent = (rawData) => {
     
     const CleanPostContent = rawData.map((post) => {
         
-        const {sys, fields} = post
+        const {fields, sys} = post
         const {id} = sys
         const postTitle = fields.title
-        const postDescription = fields.description
-        const postBackground = 'https:' + fields.picture.fields.file.url
-        const updatedPost = {id, postTitle, postDescription, postBackground }
-        
+        const postContentText = fields.content
+         //DOESNT WORK? const postBackground = 'https:' + fields.media.fields.file.url
+        const updatedPost = {id, postTitle, postContentText,}
+       
         return updatedPost
         
         
         
     })
+    
     setPostContent(CleanPostContent)
     
 }
@@ -31,7 +32,7 @@ const CleanUpPostContent = (rawData) => {
 useEffect(() => {
     const GetPostContent = async () => {
         try {
-            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'continent,city'})
+            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'continents'})
             const responseData = response.items
             console.log(response.items)
             if (responseData) {
@@ -40,8 +41,8 @@ useEffect(() => {
                     setPostContent([])
             }     
             } catch (error) {
-            console.log(error)
             
+            console.log(error)
             }
         }
     GetPostContent()
@@ -54,7 +55,7 @@ useEffect(() => {
         <div className="postcontent" key={index}>
         
        <h1> {post.postTitle}  </h1>
-        <p className='postDescription'> {documentToReactComponents(post.postDescription)} </p>
+        <p className='postContent'> {documentToReactComponents(post.postContentText)} </p>
        <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
 
        </div>
