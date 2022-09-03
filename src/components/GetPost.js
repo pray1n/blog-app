@@ -53,15 +53,16 @@ useEffect(() => {
     <div>{PostContent.map((post , index) => {
         console.log(post)
     return(
-        <div className="postcontent" key={index}>
+    <div className="postcontent" key={index}>
         
-       <h1> {post.postTitle}  </h1>
+        <h1> {post.postTitle}  </h1>
+        <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
         <p className='postContent'> {documentToReactComponents(post.postContentText)} </p>
         <p className='postDate'> {post.postDate} </p>
-       <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
+       
        
        <hr></hr>
-       </div>
+    </div>
        
        
        
