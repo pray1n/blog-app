@@ -30,8 +30,6 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
-  
-  
 }
 
 /* App */
@@ -55,6 +53,10 @@ main {
 
 #sidepanel button, #sidepanel div {
   width: 100%; margin-bottom: 0.5rem;
+}
+
+#sidepanel ul li {
+  margin: 0.5rem 0; border-bottom: 1px dotted #61dafb; color: #1976D2;
 }
 
 .postcontent > h1{

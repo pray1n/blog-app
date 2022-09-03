@@ -36,7 +36,7 @@ useEffect(() => {
         try {
             const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'barcelona',})
             const responseData = response.items
-            console.log(response.items)
+            //console.log(response.items)
             if (responseData) {
                 CleanUpPostContent(responseData)
             } else {
