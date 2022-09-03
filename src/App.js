@@ -13,7 +13,7 @@ function App() {
             <div className="main">
                 <GetPost />
             </div>
-            <hr />
+            
             <Sidepanel />
             <Footer />
         </div>
