@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { client } from '../client';
 
 //https://worktotravel.de/about/
-function Sidepanel(post) {
+function Sidepanel() {
     const [SideContent, setSideContent] = useState([]);
 
     useEffect(() => {
@@ -15,7 +15,6 @@ function Sidepanel(post) {
         try {
             const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'countries',});
             const responseData = response.items;
-            console.log(response.items);
             if (responseData) {
                 CleanUpContent(responseData);
             } else {
