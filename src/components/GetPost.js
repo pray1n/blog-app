@@ -54,7 +54,7 @@ useEffect(() => {
     <div className="main">{PostContent.map((post , index) => {
         console.log(post)
     return(
-    <div className="postcontent" key={index}>
+    <div className="postContent" key={index}>
 
         
         <h1> {post.postTitle}  </h1>

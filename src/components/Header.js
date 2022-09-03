@@ -14,7 +14,7 @@ import { styled, alpha } from '@mui/material/styles'
 import InputBase from '@mui/material/InputBase'
 import SearchIcon from '@mui/icons-material/Search'
 
-const pages = ['Home', 'Countries', 'Cities', 'About Us']
+const pages = ['Home', 'Countries', 'Cities']
 
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null)
