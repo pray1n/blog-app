@@ -16,7 +16,8 @@ const CleanUpPostContent = (rawData) => {
         const postContentText = fields.content
         const postBackground = 'https:' + fields.media[0].fields.file.url
         const postDate = fields.date
-        const updatedPost = {id, postTitle, postContentText, postBackground, postDate}
+        const postTag = fields.tag
+        const updatedPost = {id, postTitle, postContentText, postBackground, postDate, postTag}
        
         return updatedPost
         
@@ -33,7 +34,7 @@ const CleanUpPostContent = (rawData) => {
 useEffect(() => {
     const GetPostContent = async () => {
         try {
-            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'countries',})
+            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'barcelona',})
             const responseData = response.items
             console.log(response.items)
             if (responseData) {
@@ -54,11 +55,23 @@ useEffect(() => {
         console.log(post)
     return(
     <div className="postcontent" key={index}>
-       <h1> {post.postTitle}  </h1>
-        <p className='postDescription'> {documentToReactComponents(post.postDescription)} </p>
-       <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
 
-       </div>       
+        
+        <h1> {post.postTitle}  </h1>
+        <p className='postDate'> posted on  {post.postDate} </p>
+        <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
+        <p className='postContent'> {documentToReactComponents(post.postContentText)} </p>
+        
+       
+       
+       <hr></hr>
+    </div>
+       
+       
+       
+       
+       
+
     )
     })}</div>
   )

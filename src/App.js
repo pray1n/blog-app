@@ -7,6 +7,7 @@ import Sidepanel from './components/Sidepanel'
 function App() {
     return (
         <div>
+        
             <Header />
             <hr />
             <main>
