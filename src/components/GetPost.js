@@ -56,9 +56,10 @@ useEffect(() => {
     <div className="postcontent" key={index}>
         
         <h1> {post.postTitle}  </h1>
+        <p className='postDate'> {post.postDate} </p>
         <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
         <p className='postContent'> {documentToReactComponents(post.postContentText)} </p>
-        <p className='postDate'> {post.postDate} </p>
+        
        
        
        <hr></hr>
