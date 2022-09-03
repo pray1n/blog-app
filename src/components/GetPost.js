@@ -34,7 +34,7 @@ const CleanUpPostContent = (rawData) => {
 useEffect(() => {
     const GetPostContent = async () => {
         try {
-            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'barcelona',})
+            const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'countries',})
             const responseData = response.items
             console.log(response.items)
             if (responseData) {
@@ -51,7 +51,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className="main">Main{PostContent.map((post , index) => {
+    <div className="main">{PostContent.map((post , index) => {
         console.log(post)
     return(
     <div className="postcontent" key={index}>

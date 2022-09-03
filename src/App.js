@@ -9,12 +9,12 @@ function App() {
         <div>
         
             <Header />
-            <hr />
+            
             <main>
                 <GetPost />
                 <Sidepanel />
             </main>
-            <hr />
+            
             <Footer />
         </div>
     )
