@@ -48,7 +48,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <div>{PostContent.map((post , index) => {
+    <div className="main">Main{PostContent.map((post , index) => {
         console.log(post)
     return(
         <div className="postcontent" key={index}>
@@ -57,11 +57,7 @@ useEffect(() => {
         <p className='postDescription'> {documentToReactComponents(post.postDescription)} </p>
        <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
 
-       </div>
-       
-       
-       
-       
+       </div>       
     )
     })}</div>
   )

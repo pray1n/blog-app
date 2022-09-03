@@ -1,23 +1,26 @@
+#root {
+  width: 80%;
+  margin: 2rem auto;
+}
+
 /* Header */
 .headercontainer{
   display: flex;
   gap: 2rem;
   flex-direction: row-reverse;
 }
-  
 
 .headerflex{
   display: flex;
   justify-content: center;
   gap: 2rem;
-  width: 80%;
   height: 20%;
-  margin-top: 2rem
-
 }
+
 .newLogo > img{
   height: 8rem;
 }
+
 /* Footer */
 .footerflex{
   display: flex;
@@ -25,15 +28,27 @@
   gap: 2rem;
   
 }
+
 /* App */
-.main{
-  margin-left: 25rem;
-  width: 45rem;
+main {
+  display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start; gap: 1.5rem;
 }
+
+main div {
+  border: 1px solid #aaa;
+}
+
+.main {
+  flex: 1 1 90%;
+}
+
+.sidepanel {
+  flex: 1 1 10%;
+}
+
 .postcontent > h1{
   font-size: 1.25rem;
 }
-
 
 .App {
   text-align: center;
