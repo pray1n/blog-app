@@ -8,16 +8,15 @@ function App() {
     return (
         <div>
             <Header />
-
-            
-            <div className="main">
+            <hr />
+            <main>
                 <GetPost />
-            </div>
-            
-            <Sidepanel />
+                <Sidepanel />
+            </main>
+            <hr />
             <Footer />
         </div>
     )
 }
 
-export default App
+export default App;

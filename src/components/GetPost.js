@@ -50,25 +50,15 @@ useEffect(() => {
 }, [])
 
   return (
-    <div>{PostContent.map((post , index) => {
+    <div className="main">Main{PostContent.map((post , index) => {
         console.log(post)
     return(
     <div className="postcontent" key={index}>
-        
-        <h1> {post.postTitle}  </h1>
-        <p className='postDate'> {post.postDate} </p>
-        <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
-        <p className='postContent'> {documentToReactComponents(post.postContentText)} </p>
-        
-       
-       
-       <hr></hr>
-    </div>
-       
-       
-       
-       
-       
+       <h1> {post.postTitle}  </h1>
+        <p className='postDescription'> {documentToReactComponents(post.postDescription)} </p>
+       <img src={post.postBackground} alt="travel" height= "350px" width="500px" />
+
+       </div>       
     )
     })}</div>
   )
