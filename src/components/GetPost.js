@@ -15,7 +15,7 @@ const CleanUpPostContent = (rawData) => {
         const postTitle = fields.title
         const postContentText = fields.content
         const postBackground = 'https:' + fields.media[0].fields.file.url
-        const postDate = fields.date
+        const postDate = new Date(fields.date).toLocaleDateString();
         const postTag = fields.tag
         const updatedPost = {id, postTitle, postContentText, postBackground, postDate, postTag}
        
