@@ -4,15 +4,26 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Sidepanel from './components/Sidepanel'
 
+
 function App() {
-    // var contentful = require('contentful');
-    // var client = contentful.createClient({
-    //   space: 'a5pwwbsii6k0',
-    //   accessToken: 'r8cRv4S5kkPOszbqR32nOugt9yZF-yt007mJM3Mmq0s',
-    // });
-    // client.getEntry('1vRgHx5IZXSR8ayaeytQnz').then(function (entry) {
-    //   // logs the entry metadata
-    //   console.log(entry.sys);
+  
+  
+  return (
+    
+    <div>
+    <Header />
+    
+    <hr/>
+    <div className="main">
+    <GetPost />
+    </div>
+    <hr/>
+    <Sidepanel />
+    <Footer />
+    </div>
+  );
+}
+
 
     //   // logs the field with ID title
     //  console.log(entry.sys.contentType.sys.id)
