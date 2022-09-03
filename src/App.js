@@ -4,6 +4,8 @@ import GetPost from './components/GetPost';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidepanel from './components/Sidepanel';
+import {Route, Switch, BrowserRouter, Routes} from 'react-router-dom';
+
 
 function App() {
     const [search, setSearch] = useState('');
@@ -13,14 +15,30 @@ function App() {
     }
 
     return (
-        <div>
+        <BrowserRouter>
+        
             <Header handleSearch={handleSearch} search={search}/>
             <main>
-                <GetPost search={search}/>
+        
+        <Routes>
+                    <Route path="/" element={<GetPost content="home" search={search} />}>
+            
+                    </Route>
+
+                    <Route path="/countries" element={<GetPost content="countries" search={search} />}>
+            
+                    </Route>
+
+                    <Route path="/cities" element={<GetPost content="cities" search={search} />}>
+            
+                    </Route>
+        </Routes>
+                
                 <Sidepanel />
             </main>
             <Footer />
-        </div>
+        </BrowserRouter>
+        
     )
 }
 

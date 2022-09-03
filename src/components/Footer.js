@@ -1,12 +1,17 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Footer (){
+ 
+  
   return (
     <div className="footerflex">
-        <p>About</p>
-        <p>Contact</p>
-        <p>Made by Ling, Justin, Tilo</p>
+        <NavLink className="link" to="/">contact</NavLink>
+        <NavLink className="link" to="/countries">contact</NavLink>
+        <NavLink className="link" to="/cities">contact</NavLink>
     </div>
+
+    
   )
 }
 

@@ -2,9 +2,9 @@ import React, { useState, useEffect, } from 'react';
 import { client } from '../client';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const GetPost = ({search}) => {
+const GetPost = ({search,content}) => {
     const [PostContent, setPostContent] = useState([]);
-    console.log(search);
+    console.log(content);
 
     const CleanUpPostContent = (rawData) => {
         const CleanPostContent = rawData.map((post) => {
