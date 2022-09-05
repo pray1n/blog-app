@@ -5,8 +5,8 @@ function Footer () {
   return (
     <div className="footerflex">
         <NavLink className="link" to="/">Home</NavLink>
-        <NavLink className="link" to="/:countries">Countries</NavLink>
-        <NavLink className="link" to="/:cities">Cities</NavLink>
+        <NavLink className="link" to="/countries">Countries</NavLink>
+        <NavLink className="link" to="/cities">Cities</NavLink>
     </div>
   )
 }

@@ -62,14 +62,14 @@ const GetPost = ({search, content}) => {
 
     return (
         <div className="main">{PostContent.map((post , index) => {
-            console.log(post)
+            console.log(post);
             return (
                 <div className="postContent" key={index}>
                     <h1> {post.postTitle}  </h1>
                     <p className='postDate'> posted on  {post.postDate} </p>
                     <img alt="travelpicture" src={post.postBackground}  height= "350px" width="500px" />
                     <p className='postContent'> {documentToReactComponents(post.postContentText)} </p>
-                    <hr size="1.5" color="black"></hr>
+                    <hr></hr>
                 </div>
             )
         })}
