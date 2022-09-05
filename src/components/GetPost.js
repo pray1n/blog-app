@@ -24,7 +24,7 @@ const GetPost = ({search,content}) => {
     useEffect(() => {
         const GetPostContent = async () => {
             try {
-                const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'barcelona',})
+                const response = await client.getEntries({ 'metadata.tags.sys.id[in]': 'countries',})
                 const responseData = response.items
                 //console.log(response.items)
                 if (responseData) {
