@@ -16,24 +16,16 @@ function App() {
 
     return (
         <BrowserRouter>
-        
             <Header handleSearch={handleSearch} search={search}/>
             <main>
-        
-        <Routes>
+                <Routes>
                     <Route path="/" element={<GetPost content="home" search={search} />}>
-            
                     </Route>
-
                     <Route path="/countries" element={<GetPost content="countries" search={search} />}>
-            
                     </Route>
-
                     <Route path="/cities" element={<GetPost content="cities" search={search} />}>
-            
                     </Route>
-        </Routes>
-                
+                </Routes>
                 <Sidepanel />
             </main>
             <Footer />

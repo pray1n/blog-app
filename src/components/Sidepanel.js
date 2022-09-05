@@ -9,6 +9,7 @@ function Sidepanel() {
 
     useEffect(() => {
         getSideContent();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const getSideContent = async () => {
@@ -40,7 +41,7 @@ function Sidepanel() {
         <div id="sidepanel">
             <h2>About Me</h2>
             <p>Thanks for checking out my website! I hope my content sparks your inner explorer and makes you a smarter traveler!</p>
-            <img src="https://i0.wp.com/worktotravel.de/wp-content/uploads/DSC_0540-e1485716433565.jpg" />
+            <img src="https://i0.wp.com/worktotravel.de/wp-content/uploads/DSC_0540-e1485716433565.jpg" alt='travel'/>
             <h2>New</h2>
             <ul>
                 {SideContent.map((content, index) => {
