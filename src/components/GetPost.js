@@ -69,7 +69,7 @@ const GetPost = ({search, content}) => {
                     <p className='postDate'> posted on  {post.postDate} </p>
                     <img alt="travelpicture" src={post.postBackground}  height= "350px" width="500px" />
                     <p className='postContent'> {documentToReactComponents(post.postContentText)} </p>
-                    <hr></hr>
+                    <hr size="1.5" color="black"></hr>
                 </div>
             )
         })}
