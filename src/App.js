@@ -4,7 +4,7 @@ import GetPost from './components/GetPost';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidepanel from './components/Sidepanel';
-import {Route, Switch, BrowserRouter, Routes} from 'react-router-dom';
+import {Route,BrowserRouter, Routes} from 'react-router-dom';
 
 
 function App() {
