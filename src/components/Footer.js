@@ -1,18 +1,14 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-function Footer (){
- 
-  
+function Footer () {
   return (
     <div className="footerflex">
-        <NavLink className="link" to="/">About</NavLink>
-        <NavLink className="link" to="/countries">Contact</NavLink>
-        <NavLink className="link" to="/cities"></NavLink>
+        <NavLink className="link" to="/">Home</NavLink>
+        <NavLink className="link" to="/countries">Countries</NavLink>
+        <NavLink className="link" to="/cities">Cities</NavLink>
     </div>
-
-    
   )
 }
 
-export default Footer
+export default Footer;
